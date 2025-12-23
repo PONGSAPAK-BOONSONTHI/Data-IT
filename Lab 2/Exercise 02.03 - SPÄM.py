@@ -49,18 +49,18 @@ class ArrayStack:
 
 def is_parentheses_matching(input_):
     sta = ArrayStack()
-    not_OpenBracket = True
+    bracket_map = {")": "(", "}": "{", "]": "["}
     for i in input_:
-        if i in "({[":
+        if i in "({[":  
             sta.push(i)
         elif i in ")}]":
-            if (i == ")" and sta.get_stack_top() != "(") or (i == "}" and sta.get_stack_top() != "{") or (i == "]" and sta.get_stack_top() != "["):
-                # print("Underflow: Cannot pop data from an empty list")
-                sta.pop()
-                not_OpenBracket = False
+            top = sta.pop()
+            if top is None:
                 return False
-            sta.pop()
-    return sta.is_empty() if not_OpenBracket else False
+            if top != bracket_map[i]:
+                sta.pop()
+                return False
+    return sta.is_empty()
 
 data = input()
 result =  is_parentheses_matching(data)
