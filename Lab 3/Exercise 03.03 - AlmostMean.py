@@ -43,5 +43,18 @@ def main():
                 max_score = score
                 result = node.data
         node = node.next
-    print(result)
+    print("\n"+result)
 main()
+
+# 4
+# ID_A 10
+# ID_B 10
+# ID_C 30
+# ID_D 30
+
+# 5
+# 64010001 90
+# 64010002 50
+# 64010003 70
+# 64010004 85
+# 64010005 80
