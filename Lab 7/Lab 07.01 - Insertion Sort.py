@@ -1,7 +1,7 @@
 """Lab 07.01 - Insertion Sort"""
-def insertionSort(data: list):
+def insertionSort(data: list, last: int):
     comparison = 0
-    for current in range(1, len(data) - 1):
+    for current in range(1, last + 1):
         hold = data[current]
         walker = current - 1
         while walker >= 0:
@@ -17,6 +17,6 @@ def insertionSort(data: list):
 def main():
     import json
     data_list = json.loads(input())
-    print(len(data_list))
-    insertionSort(data_list)
+    last = int(input())
+    insertionSort(data_list, last)
 main()
