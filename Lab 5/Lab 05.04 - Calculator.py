@@ -9,3 +9,4 @@ def main():
             C += len(str(i + 1)) + 1
         print(C)
 main()
+  
